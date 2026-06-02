@@ -52,13 +52,15 @@ public class Menu {
                         break;
                     case 8:
                         System.out.println("Saindo do AmareloBank. Até a próxima!");
-                        scanner.close();
+
                         return;
                     default:
                         System.out.println("Opção inválida. Tente novamente.");
                 }
 
             }
+        } else {
+            System.out.println("Número ou senha incorretos. Acesso negado.");
         }
 
         scanner.close();
