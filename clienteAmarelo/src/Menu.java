@@ -26,6 +26,7 @@ public class Menu {
         System.out.println("5. Cliente com Menor/Maior Idade");
         System.out.println("6. Excluir Cliente");
         System.out.println("7. Atualizar Dados do Cliente");
+        System.out.println("8. Sair");
         
         int operacao = scanner.nextInt();
         switch (operacao) {
@@ -45,9 +46,12 @@ public class Menu {
                 break;
             case 7:
                 break;
-        
+            case 8:
+                System.out.println("Saindo do AmareloBank. Até a próxima!");
+                scanner.close();
+                return;
             default:
-                break;
+                System.out.println("Opção inválida. Tente novamente.");
         }
                 
             } else {
