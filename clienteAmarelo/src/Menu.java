@@ -18,13 +18,7 @@ public class Menu {
 
             if (numero == 123456 && senha.equals("admin")) {
                 System.out.println("Acesso concedido. Bem-vindo ao AmareloBank!");
-            } else {
-                System.out.println("Número ou senha incorretos. Acesso negado.");
-            }
-    
-            scanner.close();
-            
-        System.out.println("Funcionalidades disponíveis:");
+                 System.out.println("Funcionalidades disponíveis:");
         System.out.println("1. Cadastrar cliente");
         System.out.println("2. Consultar Dados Pessoais de um Cliente");
         System.out.println("3. Contagem por Sexo");
@@ -55,6 +49,14 @@ public class Menu {
             default:
                 break;
         }
+                
+            } else {
+                System.out.println("Número ou senha incorretos. Acesso negado.");
+            }
+    
+            
+       
+             scanner.close();
     }
 
    
