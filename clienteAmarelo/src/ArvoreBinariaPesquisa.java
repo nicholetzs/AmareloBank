@@ -18,4 +18,14 @@ public class ArvoreBinariaPesquisa {
     public int getQuantNos() {
         return this.quantNos;
     }
+
+    public boolean inserir(Cliente cliente) {
+        if (pesquisar(cliente.getNome())) {
+
+        }
+    }
+
+    public boolean pesquisar(String nome) {
+
+    }
 }
