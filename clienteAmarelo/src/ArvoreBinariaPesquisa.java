@@ -6,23 +6,18 @@ public class ArvoreBinariaPesquisa {
         this.quantNos = 0;
         this.raiz = null;
     }
-
     public boolean eVazia() {
         return this.raiz == null;
     }
-
     public No getRaiz() {
         return this.raiz;
     }
-
     public int getQuantNos() {
         return this.quantNos;
     }
-
     public boolean pesquisar(String nome) {
         return pesquisar(nome, this.raiz) != null;
     }
-
     private No pesquisar(String nome, No no) {
         if (no != null) {
             int comp = nome.compareToIgnoreCase(no.getCliente().getNome());
@@ -34,16 +29,13 @@ public class ArvoreBinariaPesquisa {
         }
         return no;
     }
-
     public Cliente consultar(String nome) {
         No no = pesquisar(nome, this.raiz);
         return no != null ? no.getCliente() : null;
     }
-
     public boolean pesquisarCpf(String cpf) {
         return pesquisarCpf(this.raiz, cpf);
     }
-
     private boolean pesquisarCpf(No no, String cpf) {
         if (no == null) {
             return false;
@@ -53,7 +45,6 @@ public class ArvoreBinariaPesquisa {
         }
         return pesquisarCpf(no.getEsq(), cpf) || pesquisarCpf(no.getDir(), cpf);
     }
-
     public boolean inserir(Cliente cliente) {
         if (pesquisar(cliente.getNome()) || pesquisarCpf(cliente.getCpf())) {
             return false;
@@ -63,7 +54,6 @@ public class ArvoreBinariaPesquisa {
             return true;
         }
     }
-
     private No inserir(Cliente cliente, No no) {
         if (no == null) {
             return new No(cliente);
@@ -78,7 +68,6 @@ public class ArvoreBinariaPesquisa {
             }
         }
     }
-
     public boolean remover(String nome) {
         if (pesquisar(nome)) {
             this.raiz = remover(nome, this.raiz);
@@ -88,7 +77,6 @@ public class ArvoreBinariaPesquisa {
             return false;
         }
     }
-
     private No remover(String nome, No arv) {
         int comp = nome.compareToIgnoreCase(arv.getCliente().getNome());
         if (comp < 0) {
@@ -106,7 +94,6 @@ public class ArvoreBinariaPesquisa {
         }
         return arv;
     }
-
     private No arrumar(No arv, No maior) {
         if (maior.getDir() != null) {
             maior.setDir(arrumar(arv, maior.getDir()));
@@ -120,7 +107,6 @@ public class ArvoreBinariaPesquisa {
     public int contarPorSexo(String sexo) {
         return contarPorSexo(this.raiz, sexo);
     }
-
     private int contarPorSexo(No no, String sexo) {
         if (no == null) {
             return 0;
@@ -128,11 +114,9 @@ public class ArvoreBinariaPesquisa {
         int count = no.getCliente().getSexo().equalsIgnoreCase(sexo) ? 1 : 0;
         return count + contarPorSexo(no.getEsq(), sexo) + contarPorSexo(no.getDir(), sexo);
     }
-
     public void listarPorFaixaEtaria(int min, int max) {
         listarPorFaixaEtaria(this.raiz, min, max);
     }
-
     private void listarPorFaixaEtaria(No no, int min, int max) {
         if (no != null) {
             listarPorFaixaEtaria(no.getEsq(), min, max);
@@ -143,14 +127,12 @@ public class ArvoreBinariaPesquisa {
             listarPorFaixaEtaria(no.getDir(), min, max);
         }
     }
-
     public Cliente obterClienteMenorIdade() {
         if (this.raiz == null) {
             return null;
         }
         return obterClienteMenorIdade(this.raiz, this.raiz.getCliente());
     }
-
     private Cliente obterClienteMenorIdade(No no, Cliente atualMenor) {
         if (no == null) {
             return atualMenor;
@@ -162,14 +144,12 @@ public class ArvoreBinariaPesquisa {
         atualMenor = obterClienteMenorIdade(no.getDir(), atualMenor);
         return atualMenor;
     }
-
     public Cliente obterClienteMaiorIdade() {
         if (this.raiz == null) {
             return null;
         }
         return obterClienteMaiorIdade(this.raiz, this.raiz.getCliente());
     }
-
     private Cliente obterClienteMaiorIdade(No no, Cliente atualMaior) {
         if (no == null) {
             return atualMaior;
