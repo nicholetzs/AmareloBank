@@ -45,4 +45,11 @@ public class Cliente {
         this.saldoCliente = saldoCliente;
     }
 
+    @Override
+	public String toString() {
+		return "Cliente [nome=" + nome + ", cpf=" + cpf + ", idade=" + idade + ", sexo=" + sexo + ", saldoCliente="
+				+ saldoCliente + "]";
+	}
+
+
 }
