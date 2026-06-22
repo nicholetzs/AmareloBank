@@ -45,4 +45,13 @@ public class Cliente {
         this.saldoCliente = saldoCliente;
     }
 
+    @Override
+    public String toString() {
+        return "Nome: " + nome +
+                "\nCPF: " + cpf +
+                "\nIdade: " + idade +
+                "\nSexo: " + sexo +
+                "\nSaldo: R$ " + String.format("%.2f", saldoCliente);
+    }
+
 }
