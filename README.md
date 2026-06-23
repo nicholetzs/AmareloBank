@@ -1,4 +1,4 @@
-# AmareloBank
+# AmareloBank 💰
 
 O **AmareloBank** é um projeto desenvolvido em **Java** para simular um sistema simples de gerenciamento de clientes bancários pelo terminal.
 
